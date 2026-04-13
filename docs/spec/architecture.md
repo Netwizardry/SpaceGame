@@ -19,5 +19,18 @@
 - **Central State Store:** 은하계 지도, 인물 DB, 시장 가격, 물류 노선을 통합 관리.
 - **Undo/Redo (Strategic Turn):** 턴 종료 전까지의 명령을 되돌릴 수 있는 히스토리 관리.
 
+## 5. 데이터 영속성 (Persistence & Save/Load)
+전체 게임 상태는 스냅샷 형태로 직렬화되어 저장되며, 100% 재현 가능한 결정론적 시뮬레이션을 지향함.
+
+### 5.1 저장 대상 데이터 스키마
+- **Galactic_Map_State:** 행성 소유권, 인프라 설치 현황, 물류 라인 연결 데이터.
+- **Fleet_Registry:** 모든 함대의 위치, 인스턴스 목록(Ship_ID), 잔여 군수품 및 연료량.
+- **Entity_History:** 개별 인물의 능력치 변동, 누적 공적, 관계도(Affinity) 및 AP 잔량.
+- **Economy_Index:** 자원별 전역 시장 가격 및 성계별 Jaggle 비축량.
+
+### 5.2 세이브/로드 규칙
+- **Turn-Based Snapshot:** 전략 턴(3일) 시작 직후 자동 저장 수행.
+- **Integrity Check:** 로드 시 데이터 해시 검증을 통해 모딩 및 데이터 오염 방지.
+
 ---
-*FHDL-SG-v0.1 기술 아키텍처 명세*
+*SpaceGame-v0.1 기술 아키텍처 명세*
