@@ -1,0 +1,32 @@
+{
+  "simulation": {
+    "battle_limit_ticks": 300,
+    "tick_duration": 1.0,
+    "world_width": 100.0,
+    "world_height": 100.0
+  },
+  "ship": {
+    "max_speed": 2.0,
+    "slow_speed": 1.0,
+    "max_accel": 0.5,
+    "max_turn_rate": 45.0,
+    "collision_radius": 1.0,
+    "weapon_range": 20.0,
+    "reload_time": 3,
+    "base_hit_rate": 0.70,
+    "detection_range": 30.0,
+    "base_damage": 10.0,
+    "zone_max_hp": 100.0
+  },
+  "formation": {
+    "tolerance_reached": 2.0,
+    "tolerance_mild": 4.0,
+    "grid_scale": 1.0
+  },
+  "ai_weights": {
+    "wF": 1.5,
+    "wC": 10.0,
+    "wT": 2.0,
+    "wB": 8.0
+  }
+}
